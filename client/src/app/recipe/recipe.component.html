@@ -1,1 +1,42 @@
-<p>recipe works!</p>
+<app-header></app-header>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="container">
+                <h5>Filter</h5>
+                <button class="btn mt-5">All</button>
+                
+                <!-- Cuisine Type -->
+                <button class="btn dropdown-toggle mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#cuisineType" aria-expanded="false" aria-controls="cuisineType">
+                    Cuisine Type
+                </button>
+                <div class="collapse mt-2" id="cuisineType">
+                    <button class="btn">Italian</button>
+                    <button class="btn">Asian</button>
+                    <button class="btn">American</button>
+                    <button class="btn">Mexican</button>
+                    <button class="btn">Indian</button>
+                    <button class="btn">Pakistani</button>
+                    <button class="btn">Japanese</button>
+                    <button class="btn">Thai</button>
+                </div>
+
+                <!-- Meal Type -->
+                <button class="btn dropdown-toggle mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#mealType" aria-expanded="false" aria-controls="mealType">
+                    Meal Type
+                </button>
+                <div class="collapse mt-2" id="mealType">
+                    <button class="btn">Dinner</button>
+                    <button class="btn">Lunch</button>
+                    <button class="btn">Dessert</button>
+                    <button class="btn">Appetizer</button>
+                    <button class="btn">Breakfast</button>
+                    <button class="btn">Beverage</button>
+                    <button class="btn">Salad</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-8"></div>
+    </div>
+</div>
