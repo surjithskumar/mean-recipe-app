@@ -9,5 +9,5 @@ import { HeaderComponent } from "../header/header.component";
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-
+  demoMail:string='flavourfusion@gmail.com'
 }
