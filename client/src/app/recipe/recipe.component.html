@@ -43,7 +43,7 @@
                 <input type="text" [(ngModel)]="searchKey" class="form-control w-50" placeholder="search your recipes">
             </div>
             <div class="row my-3">
-                @for (recipe of allRecipes; track $index) {
+                @for (recipe of allRecipes |search:searchKey |  paginate: { itemsPerPage: 9, currentPage: p } ; track $index) {
                     <div class="col-lg-4">
                         <div class="p-3">
                             <img width="100%" [src]="recipe.image" alt="">
@@ -60,6 +60,9 @@
                         No Rcipes found...
                     </div>
                 }
+            </div>
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>

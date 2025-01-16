@@ -3,11 +3,12 @@ import { HeaderComponent } from "../header/header.component";
 import { ApiService } from '../services/api.service';
 import { SearchPipe } from '../pipe/search.pipe';
 import { FormsModule } from '@angular/forms'
+import { NgxPaginationModule } from 'ngx-pagination'
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [HeaderComponent,SearchPipe,FormsModule],
+  imports: [HeaderComponent,SearchPipe,FormsModule,NgxPaginationModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.css'
 })
@@ -16,6 +17,7 @@ export class RecipeComponent {
   allRecipes:any=[]
   dummyRecipes:any=[]
   searchKey:string=""
+  p:number=1;
 
   constructor(private api:ApiService){}
 
