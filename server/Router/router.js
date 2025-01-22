@@ -11,4 +11,12 @@ router.get('/all-recipes',recipeController.getRecipeController);
 
 router.post('/add-testimony',testymonyController.submitTestimonyController)
 
+//register
+
+router.post('/register',userController.registerController)
+
+//login
+
+
+
 module.exports=router

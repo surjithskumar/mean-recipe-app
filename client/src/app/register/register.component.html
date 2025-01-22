@@ -8,18 +8,26 @@
                 <div class="mb-3 text-center">
                     <h3><i class="fa-solid fa-utensils fa-flip me-2 fs-2"></i>Flavour Fusion</h3>
                 </div>
-                <form>
+                <form [formGroup]="registerForm" (ngSubmit)="register()" > @if(registerForm.get('username')?.errors && registerForm.get('username')?.touched){
+                    <div class="text-danger fw-bolder">*Invalid username</div>
+                    }
                     <div class="mb-3 text-center">
                         <input type="text" name="username" formControlName="email" placeholder="Enter your Username" class="form-control">
                     </div>
+                    @if(registerForm.get('email')?.errors && registerForm.get('email')?.touched){
+                        <div class="text-danger fw-bolder">*Invalid email</div>
+                        }
                     <div class="mb-3 text-center">
                         <input type="email" name="email" formControlName="email" placeholder="Enter your Email" class="form-control">
                     </div>
                     <div class="mb-3 text-center">
                         <input type="password" name="password" formControlName="password" placeholder="Enter your Password" class="form-control">
+                        @if(registerForm.get('username')?.errors && registerForm.get('username')?.touched){
+                            <div class="text-danger fw-bolder">*Invalid username</div>
+                            }
                     </div>
                     <div class="d-grid">
-                        <button class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success">Login</button>
                     </div>
                 </form>
         </div>
