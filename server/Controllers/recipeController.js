@@ -11,3 +11,16 @@ exports.getRecipeController=async(req,res)=>{
         res.status(401).json(error)
     }
 }
+
+//get single RecipeController
+exports.getARecipeController=async(req,res)=>{
+    console.log('inside get single recipe function');
+    const {id} = req.params
+
+    try {
+        const recipeDetails = await recipes.findById({_id:id})
+        res.status(200).json(recipeDetails)
+    } catch (error) {
+        res.status(401).catch(error)
+    }
+}

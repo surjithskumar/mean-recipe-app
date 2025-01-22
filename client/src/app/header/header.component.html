@@ -24,14 +24,18 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-user"></i>
-              <span>Hi</span>
+              @if(isLoggedIn){
+                <span>Hi {{loginUsername}}</span>
+              }
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Saved Recipe</a></li>
+              @if(isLoggedIn){
+                <li><a class="dropdown-item" href="#">Saved Recipe</a></li>
               <li><button class="dropdown-item">Logout</button></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Login</a></li>
+              } @else {
+                <li><a class="dropdown-item" href="#">Login</a></li>
               <li><a class="dropdown-item" href="#">Register</a></li>
+              }
             </ul>
           </li>
           <li class="nav-item">
