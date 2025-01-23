@@ -24,4 +24,8 @@ router.post('/login',userController.loginController)
 
 router.get('/recipes/:id/view',jwtMiddleware,recipeController.getARecipeController)
 
+//get related recipe
+
+router.get('/related-recipe',jwtMiddleware,recipeController.getRelatedRecipe)
+
 module.exports=router
