@@ -2,6 +2,7 @@ const express = require('express')
 const recipeController = require('../Controllers/recipeController')
 const testymonyController = require('../Controllers/testimonyController');
 const jwtMiddleware = require('../Middleware/jwtMiddleware');
+const downloadController = require('../Controllers/downloadController');
 
 const router = new express.Router()
 
@@ -27,5 +28,9 @@ router.get('/recipes/:id/view',jwtMiddleware,recipeController.getARecipeControll
 //get related recipe
 
 router.get('/related-recipe',jwtMiddleware,recipeController.getRelatedRecipe)
+
+//download recipe
+
+router.post('/recipe/:id/download',jwtMiddleware,downloadController.addDownloadController)
 
 module.exports=router

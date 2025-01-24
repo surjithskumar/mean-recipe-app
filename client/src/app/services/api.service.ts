@@ -50,4 +50,9 @@ export class ApiService {
     return this.http.get(`${this.server_url}/related-recipe?cuisine=${cuisine}`,this.appendToken())
   }
 
+  //download recipe api
+  downloadRecipeAPI(recipeId:string,reqBody:any){
+    return this.http.post(`${this.server_url}/recipe/${recipeId}/download`,reqBody,this.appendToken())
+  }
+
 }
