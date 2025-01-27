@@ -55,4 +55,20 @@ export class ApiService {
     return this.http.post(`${this.server_url}/recipe/${recipeId}/download`,reqBody,this.appendToken())
   }
 
+  //download recipe api
+  saveRecipeAPI(recipeId:string,reqBody:any){
+    return this.http.post(`${this.server_url}/recipe/${recipeId}/save`,reqBody,this.appendToken())
+  }
+
+  //get saved recipe api
+  getsavedRecipe(){
+    return this.http.get(`${this.server_url}/saved-recipe`,this.appendToken())
+  }
+
+  //remove saved recipe api
+
+  removeSavedRecipeAPI(id:string){
+    return this.http.delete(`${this.server_url}/saved-recipe/${id}/remove`,this.appendToken())
+  }
+
 }
