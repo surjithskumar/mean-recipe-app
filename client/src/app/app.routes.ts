@@ -9,6 +9,9 @@ import { SavedRecipeComponent } from './saved-recipe/saved-recipe.component';
 import { ViewRecipeComponent } from './view-recipe/view-recipe.component';
 
 export const routes: Routes = [
+    // http://localhost:4200/admin
+    {path:"admin",loadChildren:()=>('./admin/admin.module').then(m=>m.AdminModule)},
+    // http://localhost:4200/home
     {path:"",component:HomeComponent},
     {path:"about",component:AboutComponent},
     {path:"contact",component:ContactComponent},

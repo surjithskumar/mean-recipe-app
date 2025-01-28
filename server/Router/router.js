@@ -41,7 +41,10 @@ router.post('/recipe/:id/save',jwtMiddleware,savedRecipeController.addSavedRecip
 //get saved Recipe
 router.post('/saved-recipe',jwtMiddleware,savedRecipeController.getSavedRecipes)
 
-//get saved Recipe
+//get testimoney
+router.get('/all-testimonials',jwtMiddleware,testymonyController.getTestimonials)
+
+//remove saved Recipe
 router.delete('/saved-recipe/:id/remove',jwtMiddleware,savedRecipeController.removeSavedRecipe)
 
 module.exports=router

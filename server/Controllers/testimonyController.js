@@ -17,3 +17,15 @@ exports.submitTestimonyController = async(req,res) => {
         res.status(401).json(error)
     }
 }
+
+//get testimoney
+
+exports.getatestimonials = async(req,res) => {
+    console.log("Inside get testimoney function");
+    try {
+        const allTestimonials = await testimonials.find()
+        res.status(200).json(allTestimonials)
+    } catch (error) {
+        res.status(401).json(err)
+    }
+}

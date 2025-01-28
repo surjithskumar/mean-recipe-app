@@ -65,6 +65,11 @@ export class ApiService {
     return this.http.get(`${this.server_url}/saved-recipe`,this.appendToken())
   }
 
+  //get all testimony api
+  getAllTestimonyAPI(){
+    return this.http.get(`${this.server_url}/all-testimonials`,this.appendToken())
+  }
+
   //remove saved recipe api
 
   removeSavedRecipeAPI(id:string){
