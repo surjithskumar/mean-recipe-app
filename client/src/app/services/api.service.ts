@@ -70,6 +70,26 @@ export class ApiService {
     return this.http.get(`${this.server_url}/all-testimonials`,this.appendToken())
   }
 
+  //get update testimony
+  getUpdateTestimonyAPI(id:string,status:string){
+    return this.http.get(`${this.server_url}/testimonials/${id}/update?status=${status}`,this.appendToken())
+  }
+
+  //get all approved testimony
+  getAllApprovedTestimonyAPI(){
+    return this.http.get(`${this.server_url}/all-approved-testimonials`)
+  }
+
+  //get all downloads api
+  getAllDownloadsAPI(){
+    return this.http.get(`${this.server_url}/all-downloads`,this.appendToken())
+  }
+
+  //getAllUsersAPI
+  getAllUsersAPI(){
+    return this.http.get(`${this.server_url}/all-users`,this.appendToken())
+  }
+
   //remove saved recipe api
 
   removeSavedRecipeAPI(id:string){

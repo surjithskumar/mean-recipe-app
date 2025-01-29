@@ -1,1 +1,30 @@
-<p>downloads works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 bg-success">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-10">
+            <table class="table shadow my-5">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of allDownloads; track $index; let i=$index){
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.message}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

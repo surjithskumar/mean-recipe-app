@@ -76,10 +76,12 @@
         <h2>Client Testimonials</h2>
         <marquee>
             <div class="d-flex my-5">
-                <div class="rounded border w-25 p-2 shadow me-3">
-                    <h5>Item</h5>
-                    <p style="white-space: normal;width: 100%;text-align: justify;">Cusine</p>
-                </div>
+                @for(item of allTestimony; track $index){
+                    <div class="rounded border w-25 p-2 shadow me-3">
+                        <h5>{{item.name}}</h5>
+                        <p style="white-space: normal;width: 100%;text-align: justify;">{{item.message}}</p>
+                    </div>
+                }
             </div>
         </marquee>
     </div>

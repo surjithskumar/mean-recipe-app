@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { log } from 'node:console';
 
 
 @Component({
@@ -14,9 +15,13 @@ import { ApiService } from '../services/api.service';
 export class HomeComponent {
 
   homeRecipes:any=[]
+  allTestimony:any=[]
+
   constructor(private api:ApiService){}
+
   ngOnInit(){
     this.getAllHomeRecipes()
+    this.getAllTestimony()
   }
   getAllHomeRecipes(){
     this.api.getAllrecipesAPI().subscribe((res:any)=>{
@@ -24,4 +29,12 @@ export class HomeComponent {
       console.log(this.homeRecipes);
     })
   }
+
+  getAllTestimony(){
+    this.api.getAllApprovedTestimonyAPI().subscribe((res:any) => {
+      this.allTestimony = res.filter((item:any) => item.status == 'Approved')
+      console.log(this.allTestimony);
+    })
+  }
+  
 }

@@ -53,3 +53,16 @@ exports.loginController = async(req,res) => {
         res.status(401).json(error);
     }
 }
+
+//get all users
+
+exports.getAllUserController = async(req,res) => {
+    console.log("Inside all user function");
+
+    try {
+        const allUsers = await users.find().skip(1)
+        res.status(401).json(allUsers)
+    } catch (error) {
+        res.status(401).json(error)
+    }
+}

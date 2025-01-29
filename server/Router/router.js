@@ -44,6 +44,18 @@ router.post('/saved-recipe',jwtMiddleware,savedRecipeController.getSavedRecipes)
 //get testimoney
 router.get('/all-testimonials',jwtMiddleware,testymonyController.getTestimonials)
 
+//get update testimony
+router.get('/testmonials/:id/update',jwtMiddleware,testymonyController.updateTestimony)
+
+//get approved testimony
+router.get('/all-approved-testimonials',jwtMiddleware,testymonyController.getApprovedTestimonyController)
+
+//get all downloads
+router.get('/all-downloads',jwtMiddleware,downloadController.getAllDownloadList)
+
+//get all users
+router.get('/all-users',jwtMiddleware,userController.getAllUserController)
+
 //remove saved Recipe
 router.delete('/saved-recipe/:id/remove',jwtMiddleware,savedRecipeController.removeSavedRecipe)
 

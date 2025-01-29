@@ -21,4 +21,11 @@ export class RequestComponent {
       console.log(this.allTestimonials);
     })
    }
+   
+   getUpdatedTestimony(id:string,status:string){
+    this.api.getUpdateTestimonyAPI(id,status).subscribe((res:any) => {
+      this.getAllTestimonials()
+    })
+   }
+
 }

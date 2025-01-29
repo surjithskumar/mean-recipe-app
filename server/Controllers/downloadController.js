@@ -25,3 +25,16 @@ exports.addDownloadController = async(req,res) => {
         res.status(401).json(error)
     }
 }
+
+//get all download list
+
+exports.getAllDownloadList = async(req,res) => {
+    console.log("Inside download list function");
+
+    try {
+        const allDownloads = await downloads.find()
+        res.status(200).json(allDownloads)
+    } catch (error) {
+        res.status(401).json(error)
+    }
+}
