@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { RequestComponent } from './request/request.component';
+import { ManageRecipesComponent } from './manage-recipes/manage-recipes.component';
 
 const routes: Routes = [
   // http://localhost:4200/admin/dashboard
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"users-list",component:DownloadsComponent},
   {path:"download-list",component:DownloadsComponent},
   {path:"request-list",component:RequestComponent},
+  {path:"recipe/add",component:ManageRecipesComponent},
 ];
 
 @NgModule({

@@ -9,6 +9,8 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { ManageRecipesComponent } from './manage-recipes/manage-recipes.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SearchPipe } from '../pipe/search.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SearchPipe,
+    FormsModule
   ]
 })
 export class AdminModule { }

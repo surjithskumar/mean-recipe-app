@@ -90,6 +90,12 @@ export class ApiService {
     return this.http.get(`${this.server_url}/all-users`,this.appendToken())
   }
 
+  //add recipe Api
+
+  addRecipeAPI(){
+    return this.http.post(`${this.server_url}/add-recipe`,recipeDetails,this.appendToken())
+  }
+
   //remove saved recipe api
 
   removeSavedRecipeAPI(id:string){

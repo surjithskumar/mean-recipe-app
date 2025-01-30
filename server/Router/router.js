@@ -56,6 +56,9 @@ router.get('/all-downloads',jwtMiddleware,downloadController.getAllDownloadList)
 //get all users
 router.get('/all-users',jwtMiddleware,userController.getAllUserController)
 
+//add recipe
+router.post('/all-recipe',jwtMiddleware,recipeController.addRecipeController)
+
 //remove saved Recipe
 router.delete('/saved-recipe/:id/remove',jwtMiddleware,savedRecipeController.removeSavedRecipe)
 
